@@ -9,7 +9,9 @@
     </select>
 
     <hr>
+    <!--<keep-alive>-->
     <component :is="selectedComponent"></component>
+    <!--</keep-alive>-->
   </section>
 </template>
 
