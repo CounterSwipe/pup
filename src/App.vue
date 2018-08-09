@@ -1,44 +1,61 @@
 <template>
   <v-app light>
-    <v-toolbar class="white">
+    <!--<v-toolbar class="white">
       <v-toolbar-title v-text="title"></v-toolbar-title>
-    </v-toolbar>
+    </v-toolbar>-->
     <v-content>
       <section>
-        <v-jumbotron :gradient="gradient" dark src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
-          <v-container fill-height>
-            <v-layout align-center>
-              <v-flex text-xs-center>
-                <h3 class="display-3">Gradient over Image</h3>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-jumbotron>
-      </section>
-      <section>
-        <!--<v-parallax src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">-->
-        <v-parallax :src="require('@/assets/400-ponolilymorgan3_orig.png')">
-          <!--<v-parallax src="@/assets/logo.png">-->
-          <v-layout column align-center justify-center class="white--text">
-            <!--<img src="@/assets/logo.png" alt="Vuetify.js" height="200">-->
-            <h1 class="white--text mb-2 display-1 text-xs-center">On The Ball Dog Training</h1>
-            <div class="subheading mb-3 text-xs-center">Powered by Vuetify</div>
-            <!--<v-layout row>
-              <v-flex>
-                <img src="@/assets/hero.jpeg" height="200">
-              </v-flex>
-            </v-layout>-->
-            <v-btn class="blue lighten-2 mt-5" dark large href="/pre-made-themes">
-              Get Started
-            </v-btn>
+        <v-parallax src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" dark>
+          <v-layout align-center column justify-center>
+            <h1 class="display-2 font-weight-thin mb-3">On The Ball Dog Training</h1>
+            <h4 class="subheading">Puppy Paradise</h4>
           </v-layout>
         </v-parallax>
+      </section>
+
+      <section>
+        <!--<v-parallax src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">-->
+        <v-container>
+          <v-layout row>
+            <v-flex xs12>
+
+              <v-parallax  :src="require('@/assets/pawprints.png')" width="100" class="primary">
+                <v-layout fluid>
+                  <v-flex>
+                    <img src="@/assets/pawprint.png">
+                  </v-flex>
+                </v-layout>
+                <!--<v-parallax src="@/assets/logo.png">-->
+                <v-layout column align-center justify-center class="white--text">
+                  <!--<img src="@/assets/logo.png" alt="Vuetify.js" height="200">-->
+                  <h1 class="white--text mb-2 display-1 text-xs-center">On The Ball Dog Training</h1>
+                  <div class="subheading mb-3 text-xs-center">Powered by Vuetify</div>
+
+                  <v-btn class="blue lighten-2 mt-5" dark large href="/pre-made-themes">
+                    Get Started
+                  </v-btn>
+                </v-layout>
+              </v-parallax>
+            </v-flex>
+          </v-layout>
+        </v-container>
       </section>
       <router-view />
       <section>
 
       </section>
-
+      <section>
+        <v-jumbotron :gradient="gradient" :src="require('@/assets/pawprints.png')" dark>
+          <!--<v-jumbotron :gradient="gradient" dark src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">-->
+          <v-container fill-height>
+            <v-layout align-center>
+              <v-flex text-xs-center>
+                <h3 class="display-3">On The Ball Dog Training</h3>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-jumbotron>
+      </section>
       <section>
         <v-layout column wrap class="my-5" align-center>
           <v-flex xs12 sm4 class="my-3">
@@ -268,7 +285,7 @@ export default {
       right: true,
       rightDrawer: false,
       title: "On The Ball Dog Training",
-      gradient: "to top right, rgba(63,81,181, 0), rgba(25,32,72, .5)"
+      gradient: "to top right, rgba(63,81,181, .5), rgba(125,32,72, .7)"
     };
   }
 };
