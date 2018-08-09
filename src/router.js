@@ -10,7 +10,11 @@ export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
-    { path: "/", name: "home", component: Home },
+    {
+      path: "/",
+      name: "home",
+      component: Home
+    },
     {
       path: "/about",
       name: "about",
@@ -20,6 +24,14 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue")
     },
-    { path: "*", component: NotFoundComponent }
+    {
+      path: "/playground",
+      name: "Playground",
+      component: () => import("@/components/Playground")
+    },
+    {
+      path: "*",
+      component: NotFoundComponent
+    }
   ]
 });
