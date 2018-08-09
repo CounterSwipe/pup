@@ -1,7 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 //import Home from "./views/Home.vue";
-import Home from "./components/Cards.vue";
+//import Home from "./components/Cards.vue";
+import Home from "./components/Homie.vue";
 import NotFoundComponent from "./views/404.vue";
 
 Vue.use(Router);
