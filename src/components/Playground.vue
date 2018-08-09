@@ -2,9 +2,14 @@
   <section class="playground">
     <h1>Welcome to the component playground!</h1>
 
-    <my-button/>
-    <my-header/>
-    <my-text-input/>
+    <select v-model="selectedComponent">
+      <option v-for="(component, index) in componentList" :key="index" :value="component">
+        {{ component.name }}
+      </option>
+    </select>
+
+    <hr>
+    <component :is="selectedComponent"></component>
   </section>
 </template>
 
@@ -15,10 +20,11 @@ import TextInput from "@/components/dynamic/TextInput";
 
 export default {
   name: "Playground",
-  components: {
-    "my-button": Button,
-    "my-header": Header,
-    "my-text-input": TextInput
+  data: function() {
+    return {
+      componentList: [Button, Header, TextInput],
+      selectedComponent: null
+    };
   }
 };
 </script>

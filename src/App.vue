@@ -5,6 +5,9 @@
     </v-toolbar>-->
     <v-content>
       <section>
+        <router-view />
+      </section>
+      <section>
         <v-parallax src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" dark>
           <v-layout align-center column justify-center>
             <h1 class="display-2 font-weight-thin mb-3">On The Ball Dog Training</h1>
@@ -40,7 +43,7 @@
           </v-layout>
         </v-container>
       </section>
-      <router-view />
+      
       <section>
 
       </section>
