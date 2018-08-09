@@ -11,7 +11,10 @@ module.exports = {
     'no-console': 'off',
     'no-debugger': 'off',
     'vue/attributes-order': 'error',
-    'vue/html-quotes': 'error',
+    'vue/html-quotes': [
+      'error',
+      'double'
+    ],
     'vue/no-confusing-v-for-v-if': 'error',
     'vue/order-in-components': 'error',
     'vue/this-in-template': 'error',
