@@ -1,36 +1,45 @@
 <template>
-  <v-container fluid>
-    <v-slide-y-transition mode="out-in">
-      <v-layout column align-center>
-        <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
-        <blockquote>
-          &#8220;First, solve the problem. Then, write the code.&#8221;
-          <footer>
-            <small>
-              <em>&mdash;John Johnson</em>
-            </small>
-          </footer>
-        </blockquote>
-      </v-layout>
-    </v-slide-y-transition>
-  </v-container>
-</template>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+  <v-layout wrap align-start>
+    <!-- OR align-center || align-end etc -->
+    <component :is="hero.value"></component>
+    
+    <v-flex v-for="comp in comps " :key="comp.index" xs12 sm6>
+      <component :is="comp.value"></component>
+    </v-flex>
+  </v-layout>
+
+</template>
+<script>
+//import Button from "@/components/dynamic/Button";
+//import Header from "@/components/dynamic/Header";
+// Comment out the line below, since we will be loading it asynchronously
+//import TextInput from "@/components/dynamic/TextInput";
+
+export default {
+  name: "Home",
+  data: function() {
+    return {
+      comps: [
+        { text: "Card", value: () => import("@/components/dynamic/Card") },
+        { text: "Class1", value: () => import("@/components/dynamic/Class1") }
+        /*{ text: "Header", value: () => import("@/components/dynamic/Header") },
+        { text: "Button", value: () => import("@/components/dynamic/Button") },
+        {
+          text: "TextInput",
+          // Async loading!
+          //component: TextInput
+          value: () => import("@/components/dynamic/TextInput")
+        }*/
+      ],
+      hero: { text: "Hero", value: () => import("@/components/dynamic/Hero") },
+      selectedComponent: null
+    };
+  }
+  /*,components: {
+    "my-button": Button,
+    "my-header": Header,
+    "my-text-input": TextInput
+  }*/
+};
+</script>
