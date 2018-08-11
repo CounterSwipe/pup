@@ -11,7 +11,7 @@
           <v-flex xs12 sm4 class="display-1 font-weight-thin">Day<br>Training</v-flex>
           <v-flex xs12 sm4 class="display-1 font-weight-thin">Group<br>Classes</v-flex>
           <v-flex xs12 class="subheading" mt-1>in Berkeley Heights, NJ & Surrounding Areas</v-flex>
-        </v-layout>        
+        </v-layout>
         <v-divider class="my-2"></v-divider>
         <div class="title my-3">Check out our upcoming classes!</div>
         <v-btn round class="white--text" color="grad4" large> See more </v-btn>
@@ -34,5 +34,53 @@ export default {
 <style scoped>
 .grad4 {
   background: linear-gradient(45deg, #fa8bff 0%, #2bd2ff 52%, #2bff88 90%);
+}
+.prpgrad {
+  background: rgba(153, 102, 204, 1);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(153, 102, 204, 1) 0%,
+    rgba(153, 102, 204, 1) 20%,
+    rgba(51, 51, 153, 1) 100%
+  );
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, rgba(153, 102, 204, 1)),
+    color-stop(20%, rgba(153, 102, 204, 1)),
+    color-stop(100%, rgba(51, 51, 153, 1))
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(153, 102, 204, 1) 0%,
+    rgba(153, 102, 204, 1) 20%,
+    rgba(51, 51, 153, 1) 100%
+  );
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(153, 102, 204, 1) 0%,
+    rgba(153, 102, 204, 1) 20%,
+    rgba(51, 51, 153, 1) 100%
+  );
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(153, 102, 204, 1) 0%,
+    rgba(153, 102, 204, 1) 20%,
+    rgba(51, 51, 153, 1) 100%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(153, 102, 204, 1) 0%,
+    rgba(153, 102, 204, 1) 20%,
+    rgba(51, 51, 153, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9966cc', endColorstr='#333399', GradientType=1 );
 }
 </style>
