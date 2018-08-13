@@ -1,24 +1,34 @@
 <template>
-  <!-- OR align-center || align-end etc -->
-  <v-container fluid px-0>
-    <v-layout row wrap>
-      <!--<v-flex v-for="comp in comps " :key="comp.index" >
-        <component :is="comp.value"></component>
-      </v-flex>-->
-      <v-flex xs12>
-        <component :is="comps[3].value"></component>
-      </v-flex>
-      <v-flex xs12 sm6>
-        <component :is="comps[0].value"></component>
-      </v-flex>
-      <v-flex xs12 sm6>
-        <component :is="comps[1].value"></component>
-      </v-flex>
-      <v-flex xs12>
-        <component :is="comps[2].value"></component>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <!-- HERO -->
+  <!--<v-container id="scroll-target" style="max-height: 400px" class="scroll-y">-->
+  <!--<v-layout v-scroll:#scroll-target="onScroll" column align-center justify-center >-->
+
+  <section>
+    <v-parallax :src="require('@/assets/hero.jpg')" height="600">
+      <v-layout column align-center justify-center class="white--text">
+        <img src="@/assets/otbdglogo.png" alt="dogtraininglogo" height="200">
+        <h1 class="white--text mb-2 display-1 text-xs-center">Puppy Power</h1>
+        <div class="subheading mb-3 text-xs-center">Powered by Puppy Love</div>
+        <v-btn class="white primary--text mt-5" dark large href="/">
+          View Classes
+        </v-btn>
+      </v-layout>
+    </v-parallax>
+    <v-parallax :src="require('@/assets/hero.jpg')" height="600">
+      <v-layout column align-center justify-center class="white--text">
+        <img src="@/assets/otbdglogo.png" alt="dogtraininglogo" height="200">
+        <h1 class="white--text mb-2 display-1 text-xs-center">Puppy Power</h1>
+        <div class="subheading mb-3 text-xs-center">Powered by Puppy Love</div>
+        <v-btn class="white primary--text mt-5" dark large href="/">
+          View Classes
+        </v-btn>
+      </v-layout>
+    </v-parallax>
+  </section>
+
+  <!--</v-layout>-->
+  <!--</v-container>-->
+
 </template>
 <script>
 export default {
@@ -26,20 +36,8 @@ export default {
   data: function() {
     return {
       comps: [
-        //{ text: "Card", value: () => import("@/components/dynamic/Card") },
-        //{ text: "Class1", value: () => import("@/components/dynamic/Class1") }
-        { text: "Hero", value: () => import("@/components/dynamic/Hero") },
-        {
-          text: "Cardbtns",
-          value: () => import("@/components/dynamic/Cardbtns")
-        },
-        { text: "Card", value: () => import("@/components/dynamic/Card") },
-        {
-          text: "Scrollfun",
-          value: () => import("@/components/dynamic/Scrollfun")
-        }
+        { text: "Hero", value: () => import("@/components/dynamic/Hero") }
       ],
-      //hero: { text: "Hero", value: () => import("@/components/dynamic/Hero") },
       selectedComponent: null
     };
   }

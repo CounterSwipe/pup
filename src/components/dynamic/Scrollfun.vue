@@ -22,7 +22,7 @@ export default {
       let os = e.target.scrollTop;
       this.offsetTop = os; //e.target.scrollTop;
       if (!this.scrolled) {
-        if (os > 50) {
+        if (os > 10) {
           let cm = document.getElementById("changeMe");
           cm.classList.remove("transparent");
           cm.classList.add("primary");
@@ -30,7 +30,7 @@ export default {
           this.scrolled = true;
         }
       } else if (this.scrolled) {
-        if (os < 50) {
+        if (os < 10) {
           let cm = document.getElementById("changeMe");
           cm.classList.remove("primary");
           cm.classList.add("transparent");
