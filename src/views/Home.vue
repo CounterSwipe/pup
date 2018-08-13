@@ -5,11 +5,17 @@
       <!--<v-flex v-for="comp in comps " :key="comp.index" >
         <component :is="comp.value"></component>
       </v-flex>-->
+      <v-flex xs12>
+        <component :is="comps[3].value"></component>
+      </v-flex>
       <v-flex xs12 sm6>
         <component :is="comps[0].value"></component>
-        </v-flex>
+      </v-flex>
       <v-flex xs12 sm6>
-        <component :is="comps[1].value"></component>        
+        <component :is="comps[1].value"></component>
+      </v-flex>
+      <v-flex xs12>
+        <component :is="comps[2].value"></component>
       </v-flex>
     </v-layout>
   </v-container>
@@ -26,6 +32,11 @@ export default {
         {
           text: "Cardbtns",
           value: () => import("@/components/dynamic/Cardbtns")
+        },
+        { text: "Card", value: () => import("@/components/dynamic/Card") },
+        {
+          text: "Scrollfun",
+          value: () => import("@/components/dynamic/Scrollfun")
         }
       ],
       //hero: { text: "Hero", value: () => import("@/components/dynamic/Hero") },
