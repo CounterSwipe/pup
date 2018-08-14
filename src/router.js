@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import NavTop from "./views/NavTop.vue";
+import NavBtm from "./views/NavBtm.vue";
 //import Home from "./components/Cards.vue";
 //import Home from "./components/Homie.vue";
 import NotFoundComponent from "./views/404.vue";
@@ -14,7 +16,12 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      //component: Home
+      components: {
+        default: Home,
+        navtop: NavTop,
+        navbtm: NavBtm
+      }
     },
     {
       path: "/about",
@@ -22,17 +29,32 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      //component: () =>
+      //import(/* webpackChunkName: "about" */ "./views/About.vue")
+      components: {
+        default: () => import("./views/About.vue"),
+        navtop: NavTop,
+        navbtm: NavBtm
+      }
     },
     {
       path: "/playground",
       name: "Playground",
-      component: () => import("@/components/Playground")
+      //component: () => import("@/components/Playground")
+      components: {
+        default: () => import("@/components/Playground"),
+        navtop: NavTop,
+        navbtm: NavBtm
+      }
     },
     {
       path: "*",
-      component: NotFoundComponent
+      //component: NotFoundComponent
+      components: {
+        default: NotFoundComponent,
+        navtop: NavTop,
+        navbtm: NavBtm
+      }
     }
   ]
 });
